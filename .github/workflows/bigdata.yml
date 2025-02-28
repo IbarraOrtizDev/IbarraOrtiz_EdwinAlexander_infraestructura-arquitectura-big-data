@@ -16,6 +16,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Generate environment file
+      run: python -m venv .venv
+    
+    - name: Activate environment
+      run: source .venv/Scripts/activate
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
