@@ -61,7 +61,7 @@ python -m venv .venv
 ```
 OR
 ```BASH
-.venv/Scripts/activate
+.venv/bin/activate
 ```
 
 4. Instalar dependencias
