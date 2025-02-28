@@ -29,7 +29,7 @@ jobs:
 
     - name: Generate uuid
       id: uuid
-      run: echo "::set-output name=uuid::$(uuidgen)"
+      run: echo "UUID=$(uuidgen)" >> $GITHUB_OUTPUT
 
     - name: Install dependencies
       run: |
@@ -46,10 +46,9 @@ jobs:
     - name: Create .env file
       run: |
         echo "API_URL = 'https://jsonplaceholder.typicode.com/todos/'" > .env
-        echo "DB_PATH = 'src/static/db/ingestion_${{ steps.uuid.outputs.uuid }}.db'" >> .env
-        echo "SAMPLE_FILE_PATH = 'src/static/xlsx/ingestion_${{ steps.uuid.outputs.uuid }}.xlsx'" >> .env
-        echo "AUDIT_FILE_PATH = 'src/static/auditoria/ingestion_${{ steps.uuid.outputs.uuid }}.txt'" >> .env
-        echo "UUID = '${{ steps.uuid.outputs.uuid }}'" >> .env
+        echo "DB_PATH = 'src/static/db/ingestion_${{ steps.uuid.outputs.UUID }}.db'" >> .env
+        echo "SAMPLE_FILE_PATH = 'src/static/xlsx/ingestion_${{ steps.uuid.outputs.UUID }}.xlsx'" >> .env
+        echo "AUDIT_FILE_PATH = 'src/static/auditoria/ingestion_${{ steps.uuid.outputs.UUID }}.txt'" >> .env
 
     - name: Run ingestion script
       run: |
