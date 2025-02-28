@@ -31,10 +31,25 @@
 
 ## Descripción del Proyecto
 
-El proyecto completo (código fuente, scripts, base de datos y archivos generados) deberá estar alojado en un repositorio en GitHub. En el README del repositorio se deberá incluir la trazabilidad del proceso, indicando:
+El proyecto utiliza GitHub Actions para automatizar el proceso de ingestión de datos. El workflow definido en bigdata.yml realiza las siguientes tareas:
 
-### Descripción breve de la solución
-Este proyecto se encarga de la extracción, almacenamiento y verificación de datos desde un API utilizando Python y SQLite. Los datos se obtienen de un API, se almacenan en una base de datos SQLite y se generan archivos de evidencia en formato Excel y texto.
+1. Clona el repositorio.
+2. Genera un entorno virtual y activa el entorno.
+3. Instala las dependencias necesarias.
+4. Genera un UUID único para identificar los archivos generados.
+5. Crea los directorios necesarios para almacenar la base de datos y los archivos de evidencia.
+6. Crea un archivo .env con las rutas y configuraciones necesarias.
+7. Ejecuta el script de ingestión para extraer datos del API, almacenarlos en la base de datos y generar los archivos de evidencia.
+8. Realiza un commit y push de los archivos generados al repositorio.
+
+#### Verificación de la creación de la base de datos y la generación de los archivos de evidencia
+Para verificar que la base de datos y los archivos de evidencia se han creado correctamente, puedes revisar los archivos generados en los siguientes directorios:
+
+- Base de datos: db
+- Archivo Excel: xlsx
+- Archivo de auditoría: auditoria
+
+Estos archivos se generan y actualizan automáticamente cada vez que se ejecuta el workflow de GitHub Actions.
 
 ### Instrucciones para clonar el repositorio, instalar dependencias y ejecutar los scripts
 
