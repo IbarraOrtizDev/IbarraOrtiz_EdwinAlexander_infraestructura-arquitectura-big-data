@@ -30,7 +30,7 @@ class FileOperator:
         
         with open(audit_file_path, 'w') as f:
             f.write(f"Number of records in API: {len(df_api)}\n")
-            f.write(f"Number of records in EXCEL: {len(df_db)}\n")
+            f.write(f"Number of records in DB: {len(df_db)}\n")
             
             # Check if the number of columns is the same
             if len(df_api.columns) != len(df_db.columns):
