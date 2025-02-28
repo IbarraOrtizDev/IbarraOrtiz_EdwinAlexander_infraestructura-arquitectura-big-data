@@ -20,7 +20,7 @@ class FileOperator:
         print(df.value_counts())
         df.to_excel(file_path, index=False)
 
-    def generateAuditFile():
+    def generateAuditFile(self):
         db_path = os.getenv('DB_PATH')
         audit_file_path = os.getenv('AUDIT_FILE_PATH')
         conn = sqlite3.connect(db_path)
