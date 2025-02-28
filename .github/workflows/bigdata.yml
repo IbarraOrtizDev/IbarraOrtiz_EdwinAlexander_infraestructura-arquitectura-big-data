@@ -20,7 +20,7 @@ jobs:
       run: python -m venv .venv
     
     - name: Activate environment
-      run: .venv/Scripts/activate
+      run: source .venv/bin/activate
 
     - name: Set up Python
       uses: actions/setup-python@v2
