@@ -8,7 +8,8 @@ setup(
     install_requires=[
         'requests',
         'pandas',
-        'openpyxl'
+        'openpyxl',
+        'python-dotenv'
     ],
     entry_points={
         'console_scripts': [

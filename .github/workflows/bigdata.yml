@@ -36,6 +36,13 @@ jobs:
       run: |
         mkdir -p src/static/db src/static/xlsx src/static/auditoria
 
+    - name: Create .env file
+      run: |
+        echo "API_URL = 'https://jsonplaceholder.typicode.com/todos/'" > .env
+        echo "DB_PATH = 'src/static/db/ingestion.db'" >> .env
+        echo "SAMPLE_FILE_PATH = 'src/static/xlsx/ingestion.xlsx'" >> .env
+        echo "AUDIT_FILE_PATH = 'src/static/auditoria/ingestion.txt'" >> .env
+
     - name: Run ingestion script
       run: |
         python src/ingestion.py

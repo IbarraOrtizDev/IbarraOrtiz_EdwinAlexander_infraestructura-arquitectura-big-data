@@ -1,9 +1,13 @@
 import sqlite3
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
 class ManageDB:
     def __init__(self):
-        self.db = sqlite3.connect('src/static/db/ingestion.db')
+        path_db = os.getenv('DB_PATH')
+        self.db = sqlite3.connect(path_db)
         self.cursor = self.db.cursor()
         self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS users(
