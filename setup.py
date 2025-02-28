@@ -20,7 +20,7 @@ setup(
     description='Proyecto para la extracción, almacenamiento y verificación de datos desde un API utilizando Python y SQLite',
     author='Edwin Alexander Ibarra - Sergio Rios',
     author_email='edwin.ibarra@est.iudigital.edu.co - sergio.rios@est.iudigital.edu.co',
-    url='https://github.com/IbarraOrtizDev/infraestructura-arquitectura-big-data/',
+    url='https://github.com/IbarraOrtizDev/IbarraOrtiz_EdwinAlexander_infraestructura-arquitectura-big-data',
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',

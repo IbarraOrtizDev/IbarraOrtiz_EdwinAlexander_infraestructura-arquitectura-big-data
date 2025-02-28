@@ -1,3 +1,0 @@
-Number of records in API: 200
-Number of records in EXCEL: 200
-Number of columns is the same
