@@ -18,14 +18,15 @@ class FileOperator:
         file_path = os.getenv('SAMPLE_FILE_PATH')
         df = pd.DataFrame(data)
         print(df.value_counts())
-        df.to_excel(file_path, index=False)
+        dfTen = df.head(10)
+        dfTen.to_excel(file_path, index=False)
 
-    def generateAuditFile(self):
+    def generateAuditFile(self, api_data):
         db_path = os.getenv('DB_PATH')
         audit_file_path = os.getenv('AUDIT_FILE_PATH')
         conn = sqlite3.connect(db_path)
         df_db = pd.read_sql_query('SELECT * FROM users', conn)
-        df_api = pd.read_excel(os.getenv('SAMPLE_FILE_PATH'))
+        df_api = pd.DataFrame(api_data)
         
         with open(audit_file_path, 'w') as f:
             f.write(f"Number of records in API: {len(df_api)}\n")

@@ -16,7 +16,7 @@ def main():
     # Write data to excel
     manageFile.writeExcel(data)
     # Generate audit file
-    manageFile.generateAuditFile()
+    manageFile.generateAuditFile(data)
 
 if __name__ == '__main__':
     main()
