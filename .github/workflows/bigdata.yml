@@ -32,6 +32,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install .
 
+    - name: Create paths
+      run: |
+        mkdir -p src/static/db src/static/xlsx src/static/auditoria
+
     - name: Run ingestion script
       run: |
         python src/ingestion.py
