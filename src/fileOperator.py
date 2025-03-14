@@ -25,7 +25,7 @@ class FileOperator:
         db_path = os.getenv('DB_PATH')
         audit_file_path = os.getenv('AUDIT_FILE_PATH')
         conn = sqlite3.connect(db_path)
-        df_db = pd.read_sql_query('SELECT * FROM users', conn)
+        df_db = pd.read_sql_query('SELECT * FROM ventas', conn)
         df_api = pd.DataFrame(api_data)
         
         with open(audit_file_path, 'w') as f:

@@ -45,7 +45,8 @@ jobs:
 
     - name: Create .env file
       run: |
-        echo "API_URL = 'https://jsonplaceholder.typicode.com/todos/'" > .env
+        echo "API_URL_USUARIOS = 'https://jsonplaceholder.typicode.com/todos/'" > .env
+        echo "API_URL='https://www.kaggle.com/api/v1/datasets/download/alejandromontero1/ventas'" >> .env
         echo "DB_PATH = 'src/static/db/ingestion_${{ steps.uuid.outputs.UUID }}.db'" >> .env
         echo "SAMPLE_FILE_PATH = 'src/static/xlsx/ingestion_${{ steps.uuid.outputs.UUID }}.xlsx'" >> .env
         echo "AUDIT_FILE_PATH = 'src/static/auditoria/ingestion_${{ steps.uuid.outputs.UUID }}.txt'" >> .env
