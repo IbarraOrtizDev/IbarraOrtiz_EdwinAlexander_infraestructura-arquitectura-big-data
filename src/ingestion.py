@@ -1,6 +1,6 @@
-from fetchData import FetchData
-from fileOperator import FileOperator
-from manageDB import ManageDB
+from utils.fetchData import FetchData
+from utils.fileOperator import FileOperator
+from utils.manageDB import ManageDB
 
 
 def main():
