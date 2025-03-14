@@ -1,13 +1,14 @@
 import sqlite3
 from dotenv import load_dotenv
 import os
+import pandas as pd
 
 load_dotenv()
 
 class ManageDB:
     def __init__(self):
-        path_db = os.getenv('DB_PATH')
-        self.db = sqlite3.connect(path_db)
+        self.path_db = os.getenv('DB_PATH')
+        self.db = sqlite3.connect(self.path_db)
         self.cursor = self.db.cursor()
         self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS users(
@@ -49,11 +50,7 @@ class ManageDB:
         self.db.commit()
 
     def insert_ventas_batch(self, ventas):
-        ventas['Year'] = ventas['Year'].astype(int)
-        ventas['Month'] = ventas['Month'].astype(str)
-        ventas['Units_Sold'] = ventas['Units_Sold'].astype(int)
-        ventas['Price_per_Unit'] = ventas['Price_per_Unit'].astype(float)
-        ventas['Revenue'] = ventas['Revenue'].astype(float)
+        
         
         ventas_tuples = [
             (row.Year, row.Month, row.Customer, row.Product, row.Units_Sold, row.Price_per_Unit, row.Revenue, row.Customer_Name)
@@ -73,10 +70,10 @@ class ManageDB:
         return self.cursor.fetchall()
     
     def fetch_all_ventas(self):
-        self.cursor.execute('''
-            SELECT * FROM ventas
-        ''')
-        return self.cursor.fetchall()
+        conn = sqlite3.connect(self.path_db)
+        response = pd.read_sql_query("SELECT * FROM ventas", conn)
+        conn.close()
+        return response
 
     def close(self):
         self.db.close()

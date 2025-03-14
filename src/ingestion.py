@@ -1,3 +1,4 @@
+from utils.crashData import crash_data
 from utils.fetchData import FetchData
 from utils.fileOperator import FileOperator
 from utils.manageDB import ManageDB
@@ -8,12 +9,11 @@ def main():
     dataClass = FetchData()
     data = dataClass.fetch()
 
-    dataExport = dataClass.fetch_zip()
+    dataExport = crash_data(dataClass.fetch_zip())
 
     manageDB = ManageDB()
     manageDB.insert_users_batch(data)
     manageDB.insert_ventas_batch(dataExport)
-    ventas = manageDB.fetch_all_ventas()
 
     manageFile = FileOperator()
 

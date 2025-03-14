@@ -7,6 +7,9 @@
 <div style="text-align:center">
  <h2>Evidencia de aprendizaje 1. Parte 1 del proyecto integrador - Ingestión de Datos desde un API</h2>
 </div>
+<div style="text-align:center">
+ <h2>S25 - EA2. Preprocesamiento y Limpieza de Datos en Plataforma de Big Data en la Nube</h2>
+</div>
 <br/>
 
 ## Integrantes
@@ -91,10 +94,14 @@ pip install .
 Variables recomendadas:
 
 ```sh
-API_URL = 'https://jsonplaceholder.typicode.com/todos/'
+API_URL_USUARIOS = 'https://jsonplaceholder.typicode.com/todos/'
+API_URL = 'https://www.kaggle.com/api/v1/datasets/download/alejandromontero1/ventas'
 DB_PATH = 'src/static/db/ingestion.db'
 SAMPLE_FILE_PATH = 'src/static/xlsx/ingestion.xlsx'
 AUDIT_FILE_PATH = 'src/static/auditoria/ingestion.txt'
+REPORT_FILE_PATH = 'src/static/auditoria/cleaning_report.txt'
+REPORT_FILE_PATH_MD = 'src/static/auditoria/cleaning_report_.md'
+CLEANED_FILE_PATH = 'src/static/xlsx/ingestion_.csv'
 ```
 
 6. Crear las carpetas 
@@ -112,3 +119,51 @@ mkdir -p src/static/db src/static/xlsx src/static/auditoria
 ```sh
 python src/ingestion.py
 ```
+
+8. Ejecutar el script de limpieza de datos
+
+```sh
+python src/cleaning.py
+```
+
+## Conclusiones entrega #2
+
+El proceso de limpieza y preprocesamiento de datos ha sido fundamental para garantizar la calidad y confiabilidad del conjunto de datos de ventas. A continuación, se presentan las conclusiones basadas en los resultados obtenidos:
+
+1. Mejora en la Calidad de los Datos
+Eliminación de Valores Nulos: Se eliminaron todas las filas con valores nulos, lo que redujo el conjunto de datos de 5,478 registros a 2,163 registros. Esto asegura que no haya datos faltantes que puedan afectar los análisis posteriores.
+Manejo de Outliers: Se identificaron y eliminaron valores atípicos en las columnas Units_Sold y Revenue, lo que contribuye a un análisis más robusto y confiable.
+Corrección de Tipos de Datos: Se aseguró que cada columna tenga el tipo de dato correcto, lo que facilita las operaciones de análisis y evita errores en cálculos futuros.
+
+2. Reducción del Tamaño del Conjunto de Datos
+El número de registros se redujo de 5,478 a 2,163, lo que indica que se eliminaron aproximadamente 3,315 registros que no cumplían con los criterios de calidad. Esta reducción es significativa y refleja la cantidad de datos inconsistentes o incompletos en el conjunto original.
+
+3. Generación de Evidencias
+Archivo de Datos Limpios: Se exportó el conjunto de datos limpio a un archivo CSV (cleaned_data.csv), listo para su uso en las siguientes etapas del proyecto.
+
+Archivo de Auditoría: Se generó un archivo de auditoría (cleaning_report.txt) que documenta todas las operaciones realizadas y compara el estado de los datos antes y después de la limpieza. Esto garantiza la trazabilidad del proceso y permite verificar el impacto de cada operación.
+
+4. Operaciones Realizadas
+Las siguientes operaciones fueron clave para lograr la calidad de los datos:
+Eliminación de Registros Duplicados: Aunque no se encontraron duplicados en este caso, esta operación es crucial para evitar redundancias.
+Eliminación de Filas con Valores Nulos: Se eliminaron todas las filas con valores nulos, lo que mejoró la integridad del conjunto de datos.
+Eliminación de Datos Atípicos: Se aplicó el rango intercuartílico (IQR) para identificar y eliminar outliers en las columnas Units_Sold y Revenue.
+Conversión de Tipos de Datos: Se corrigieron los tipos de datos para asegurar que cada columna tenga el formato adecuado.
+Exportación de Datos Limpios: Los datos limpios se guardaron en un archivo CSV para su uso posterior.
+
+5. Impacto del Proceso de Limpieza
+Antes de la Limpieza:
+Total de registros: 5,478
+Valores nulos: 558 en Year, 548 en Month, 548 en Customer, 545 en Product, 548 en Units_Sold, 556 en Price_per_Unit, 554 en Revenue, 549 en Customer_Name, y 548 en Month_Num.
+
+Después de la Limpieza:
+Total de registros: 2,163
+Valores nulos: 0 en todas las columnas.
+Este proceso asegura que los datos estén completos, consistentes y listos para su análisis.
+
+6. Preparación para Análisis Posteriores
+Con los datos limpios y estructurados, el conjunto de datos está listo para ser utilizado en etapas posteriores del proyecto, como:
+
+Análisis exploratorio de datos (EDA).
+Modelado predictivo.
+Generación de informes y visualizaciones.

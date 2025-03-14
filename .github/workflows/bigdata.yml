@@ -50,10 +50,17 @@ jobs:
         echo "DB_PATH = 'src/static/db/ingestion_${{ steps.uuid.outputs.UUID }}.db'" >> .env
         echo "SAMPLE_FILE_PATH = 'src/static/xlsx/ingestion_${{ steps.uuid.outputs.UUID }}.xlsx'" >> .env
         echo "AUDIT_FILE_PATH = 'src/static/auditoria/ingestion_${{ steps.uuid.outputs.UUID }}.txt'" >> .env
+        echo "REPORT_FILE_PATH = 'src/static/auditoria/cleaning_report_${{ steps.uuid.outputs.UUID }}.txt'" >> .env
+        echo "REPORT_FILE_PATH_MD = 'src/static/auditoria/cleaning_report_${{ steps.uuid.outputs.UUID }}.md'" >> .env
+        echo "CLEANED_FILE_PATH = 'src/static/xlsx/ingestion_${{ steps.uuid.outputs.UUID }}.csv'" >> .env
 
     - name: Run ingestion script
       run: |
         python src/ingestion.py
+
+    - name: Run cleaning script
+      run: |
+        python src/cleaning.py
 
     - name: Commit and push changes
       run: |
