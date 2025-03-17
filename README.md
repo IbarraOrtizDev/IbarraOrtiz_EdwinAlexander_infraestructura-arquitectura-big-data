@@ -101,7 +101,7 @@ SAMPLE_FILE_PATH = 'src/static/xlsx/ingestion.xlsx'
 AUDIT_FILE_PATH = 'src/static/auditoria/ingestion.txt'
 REPORT_FILE_PATH = 'src/static/auditoria/cleaning_report.txt'
 REPORT_FILE_PATH_MD = 'src/static/auditoria/cleaning_report_.md'
-CLEANED_FILE_PATH = 'src/static/xlsx/ingestion_.csv'
+CLEANED_FILE_PATH = 'src/static/xlsx/cleaning_.csv'
 ```
 
 6. Crear las carpetas 

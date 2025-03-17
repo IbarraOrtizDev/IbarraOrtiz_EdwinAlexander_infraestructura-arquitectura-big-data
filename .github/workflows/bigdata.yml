@@ -52,7 +52,7 @@ jobs:
         echo "AUDIT_FILE_PATH = 'src/static/auditoria/ingestion_${{ steps.uuid.outputs.UUID }}.txt'" >> .env
         echo "REPORT_FILE_PATH = 'src/static/auditoria/cleaning_report_${{ steps.uuid.outputs.UUID }}.txt'" >> .env
         echo "REPORT_FILE_PATH_MD = 'src/static/auditoria/cleaning_report_${{ steps.uuid.outputs.UUID }}.md'" >> .env
-        echo "CLEANED_FILE_PATH = 'src/static/xlsx/ingestion_${{ steps.uuid.outputs.UUID }}.csv'" >> .env
+        echo "CLEANED_FILE_PATH = 'src/static/xlsx/cleaning_${{ steps.uuid.outputs.UUID }}.csv'" >> .env
 
     - name: Run ingestion script
       run: |
