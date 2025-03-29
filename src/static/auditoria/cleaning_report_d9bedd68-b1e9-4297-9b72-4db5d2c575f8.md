@@ -6,15 +6,15 @@
 - **Registros duplicados:** 0
 - **Valores nulos por columna:**
   - **id:** 0
-  - **Year:** 546
-  - **Month:** 533
-  - **Customer:** 552
-  - **Product:** 548
-  - **Units_Sold:** 550
-  - **Price_per_Unit:** 547
-  - **Revenue:** 546
-  - **Customer_Name:** 549
-  - **Month_Num:** 533
+  - **Year:** 541
+  - **Month:** 544
+  - **Customer:** 546
+  - **Product:** 557
+  - **Units_Sold:** 549
+  - **Price_per_Unit:** 548
+  - **Revenue:** 558
+  - **Customer_Name:** 542
+  - **Month_Num:** 544
 
 ## Estadísticas Finales
 - **Total de registros:** {final_stats['total_rows']}
