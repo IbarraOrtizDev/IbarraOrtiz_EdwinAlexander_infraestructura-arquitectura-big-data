@@ -77,3 +77,71 @@ class ManageDB:
 
     def close(self):
         self.db.close()
+
+    def create_tables_partition(self, df):
+        # Create a new SQLite connection
+        conn = sqlite3.connect(self.path_db)
+
+        columns_table = """
+            ID INTEGER PRIMARY KEY,
+            YEAR INTEGER NOT NULL,
+            MONTH TEXT NOT NULL,
+            CUSTOMER INTEGER NOT NULL,
+            PRODUCT TEXT NOT NULL,
+            UNITS_SOLD INTEGER NOT NULL,
+            PRICE_PER_UNIT REAL NOT NULL,
+            REVENUE REAL NOT NULL,
+            MONTH_NUM REAL NOT NULL,
+            CUSTOMER_NAME TEXT NOT NULL,
+            GENDER TEXT,
+            COUNTRY TEXT NOT NULL,
+            BIRTH_DATE TEXT NOT NULL,  -- Se almacena como TEXT en formato 'YYYY-MM-DD'
+            CATEGORY TEXT NOT NULL,
+            SUPPLIER TEXT NOT NULL,
+            STOCK_LEVEL INTEGER NOT NULL,
+            DISCOUNT_AVAILABLE BOOLEAN NOT NULL
+        """
+        
+        # Create a cursor object
+        cursor = conn.cursor()
+        
+        # Create a table for each unique year in the DataFrame
+        for year in df['YEAR'].unique():
+            table_name = f'ventas_{year}'
+            cursor.execute(f'''
+                CREATE TABLE IF NOT EXISTS {table_name}(
+                    {columns_table}
+                )
+            ''')
+        
+        # Commit the changes and close the connection
+        conn.commit()
+        conn.close()
+
+    def insert_data_partition(self, df):
+        # Create a new SQLite connection
+        conn = sqlite3.connect(self.path_db)
+
+        # Insert data into the appropriate partitioned table based on the year
+        for year in df['YEAR'].unique():
+            table_name = f'ventas_{year}'
+            df_year = df[df['YEAR'] == year]
+            df_year.to_sql(table_name, conn, if_exists='append', index=False)
+        
+        # Commit the changes and close the connection
+        conn.commit()
+        conn.close()
+
+    def returnTables(self):
+        # Create a new SQLite connection
+        conn = sqlite3.connect(self.path_db)
+        cursor = conn.cursor()
+        
+        # Get the list of all tables in the database
+        cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+        tables = cursor.fetchall()
+        
+        # Close the connection
+        conn.close()
+        
+        return [table[0] for table in tables]

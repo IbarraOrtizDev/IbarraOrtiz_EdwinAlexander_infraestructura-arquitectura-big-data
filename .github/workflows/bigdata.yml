@@ -41,10 +41,11 @@ jobs:
 
     - name: Create paths
       run: |
-        mkdir -p src/static/db src/static/xlsx src/static/auditoria
+        mkdir -p src/static/db src/static/xlsx src/static/auditoria src/static/random
 
     - name: Create .env file
       run: |
+        echo "UUID=${{ steps.uuid.outputs.UUID }}" > .env
         echo "API_URL_USUARIOS = 'https://jsonplaceholder.typicode.com/todos/'" > .env
         echo "API_URL='https://www.kaggle.com/api/v1/datasets/download/alejandromontero1/ventas'" >> .env
         echo "DB_PATH = 'src/static/db/ingestion_${{ steps.uuid.outputs.UUID }}.db'" >> .env
@@ -61,6 +62,10 @@ jobs:
     - name: Run cleaning script
       run: |
         python src/cleaning.py
+    
+    - name: Run enrichment script
+      run: |
+        python src/enrichment.py
 
     - name: Commit and push changes
       run: |

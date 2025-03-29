@@ -1,0 +1,37 @@
+[
+    {
+      "Product": "Product D",
+      "Category": "Electronics",
+      "Supplier": "TechCorp",
+      "Stock_Level": 120,
+      "Discount_Available": true
+    },
+    {
+      "Product": "Product E",
+      "Category": "Home Appliances",
+      "Supplier": "HomeSolutions",
+      "Stock_Level": 85,
+      "Discount_Available": false
+    },
+    {
+      "Product": "Product C",
+      "Category": "Furniture",
+      "Supplier": "FurniStyle",
+      "Stock_Level": 45,
+      "Discount_Available": true
+    },
+    {
+      "Product": "Product B",
+      "Category": "Office Supplies",
+      "Supplier": "OfficePlus",
+      "Stock_Level": 200,
+      "Discount_Available": false
+    },
+    {
+      "Product": "Product A",
+      "Category": "Sports Equipment",
+      "Supplier": "ActiveGear",
+      "Stock_Level": 60,
+      "Discount_Available": true
+    }
+  ]
