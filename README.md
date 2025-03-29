@@ -10,6 +10,9 @@
 <div style="text-align:center">
  <h2>S25 - EA2. Preprocesamiento y Limpieza de Datos en Plataforma de Big Data en la Nube</h2>
 </div>
+<div style="text-align:center">
+ <h2>S25 - EA3. Enriquecimiento de Datos en Plataforma de Big Data en la Nube</h2>
+</div>
 <br/>
 
 ## Integrantes
