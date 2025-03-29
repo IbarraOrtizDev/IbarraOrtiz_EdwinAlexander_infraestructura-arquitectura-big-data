@@ -126,6 +126,12 @@ python src/ingestion.py
 python src/cleaning.py
 ```
 
+9. Ejecutar el script de enriched
+
+```sh
+python src/enrichment.py
+```
+
 ## Conclusiones entrega #2
 
 El proceso de limpieza y preprocesamiento de datos ha sido fundamental para garantizar la calidad y confiabilidad del conjunto de datos de ventas. A continuación, se presentan las conclusiones basadas en los resultados obtenidos:
@@ -167,3 +173,21 @@ Con los datos limpios y estructurados, el conjunto de datos está listo para ser
 Análisis exploratorio de datos (EDA).
 Modelado predictivo.
 Generación de informes y visualizaciones.
+
+## Conclusiones entrega #3
+
+Conclusiones
+1. Mejora en la Calidad de los Datos
+El proceso de enriquecimiento permitió integrar información adicional de múltiples fuentes y formatos (JSON, XLSX, CSV, XML, HTML, TXT), lo que aumentó la profundidad y relevancia del dataset. Esto facilita análisis más precisos y detallados.
+
+2. Consistencia y Normalización
+Se aplicaron técnicas de transformación y limpieza para garantizar que los datos fueran consistentes. Esto incluyó la estandarización de nombres de columnas, la conversión de tipos de datos y la eliminación de redundancias.
+
+3. Registro de Auditoría
+Se generó un archivo de auditoría (enrichment_report.txt) que documenta las operaciones realizadas, como la cantidad de registros coincidentes, las transformaciones aplicadas y posibles discrepancias detectadas en la integración.
+
+5. Impacto en el Modelado de Datos
+El dataset enriquecido proporciona información más completa para la siguiente fase del proyecto (Actividad 4), mejorando la calidad de los insumos utilizados en la construcción de modelos analíticos o de machine learning.
+
+6. Optimización del Almacenamiento
+Se definió una estructura de datos eficiente en SQLite, optimizando la organización de la información y facilitando futuras consultas mediante estrategias de almacenamiento separada simulando particiones.
