@@ -17,14 +17,7 @@ def loadCustomerInformation():
 
 # Load data cleaning
 def loadDataCleaning():
-    files = glob.glob('src/static/xlsx/ingestion*.csv')
-    guid = os.getenv('UUID')
-    print(f"Files found: {files}")
-    print(f"Files Guid: {guid}")
-    # Leer y concatenar todos los archivos encontrados
-    df_list = [pd.read_csv(file) for file in files]
-    
     # Unir todos los DataFrames en uno solo
-    df = pd.concat(df_list, ignore_index=True)
+    df = pd.read_csv(os.getenv('CLEANED_FILE_PATH'))
     
     return df
