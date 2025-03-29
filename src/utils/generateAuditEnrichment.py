@@ -1,6 +1,10 @@
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 def generateAuditReport(df_sales, df_data_initial):
-    file_path = "src/static/auditoria/staticenrichment_report.txt"
+    file_path = "src/static/auditoria/enrichment_report.txt"
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
     
     with open(file_path, "w") as file:

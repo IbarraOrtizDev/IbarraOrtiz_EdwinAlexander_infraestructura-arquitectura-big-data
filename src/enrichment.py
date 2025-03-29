@@ -1,6 +1,10 @@
 from utils.generateAuditEnrichment import generateAuditReport
 from utils.loadDataEnrichment import loadCustomerInformation, loadDataCleaning, loadProductInformation
 from utils.manageDB import ManageDB
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 
 def main():
@@ -31,7 +35,7 @@ def main():
     generateAuditReport(df_sales, df_data_initial)
 
     # Export the enriched data to CSV
-    df_sales.to_csv('src/static/xlsx/enrichment.csv', index=False)
+    df_sales.to_csv(os.getenv('ENRICHED_FILE_PATH'), index=False)
     print("Enrichment completed successfully!")
 
     print("Inserting data into the database...")

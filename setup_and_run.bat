@@ -12,6 +12,7 @@ echo AUDIT_FILE_PATH=src/static/auditoria/ingestion.txt >> .env
 echo REPORT_FILE_PATH=src/static/auditoria/cleaning_report.txt >> .env
 echo REPORT_FILE_PATH_MD=src/static/auditoria/cleaning_report.md >> .env
 echo CLEANED_FILE_PATH=src/static/xlsx/cleaning.csv >> .env
+echo ENRICHED_FILE_PATH=src/static/xlsx/enrichment.csv >> .env
 
 mkdir src\static\db src\static\xlsx src\static\auditoria
 python src/ingestion.py
