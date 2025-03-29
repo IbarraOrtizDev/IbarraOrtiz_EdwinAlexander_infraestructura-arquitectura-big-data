@@ -3,18 +3,18 @@ Total de registros: 5478
 Registros duplicados: 0
 Valores nulos por columna:
 id: 0
-Year: 541
-Month: 544
-Customer: 546
-Product: 557
-Units_Sold: 549
-Price_per_Unit: 548
-Revenue: 558
-Customer_Name: 542
-Month_Num: 544
+Year: 542
+Month: 543
+Customer: 534
+Product: 545
+Units_Sold: 553
+Price_per_Unit: 552
+Revenue: 555
+Customer_Name: 545
+Month_Num: 543
 
 === Estadísticas Finales ===
-Total de registros: 2130
+Total de registros: 2142
 Registros duplicados: 0
 Valores nulos por columna:
 id: 0
