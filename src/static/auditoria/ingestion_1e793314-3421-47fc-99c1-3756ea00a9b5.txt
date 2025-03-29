@@ -1,3 +1,0 @@
-Number of records in API: 5478
-Number of records in DB: 5478
-Number of columns is different
