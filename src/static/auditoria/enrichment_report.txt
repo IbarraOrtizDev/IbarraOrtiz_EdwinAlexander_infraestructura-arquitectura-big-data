@@ -1,0 +1,67 @@
+Reporte de Enriquecimiento de Datos
+
+Registros en dataset base: 
+2136
+Registros después del enriquecimiento:
+2136
+Total de columnas en dataset base: 10
+Total de columnas en dataset enriquecido: 17
+
+--- Detalles de Integración ---
+Registros coincidentes en 'Customer': 2136
+Registros coincidentes en 'Product': 2136
+
+--- Estadísticas de Datos ---
+Total de registros: 2136
+Total de columnas: 17
+Total de valores nulos: 0
+Valores nulos por columna:
+  - ID: 0
+  - YEAR: 0
+  - MONTH: 0
+  - CUSTOMER: 0
+  - PRODUCT: 0
+  - UNITS_SOLD: 0
+  - PRICE_PER_UNIT: 0
+  - REVENUE: 0
+  - MONTH_NUM: 0
+  - CUSTOMER_NAME: 0
+  - GENDER: 0
+  - COUNTRY: 0
+  - BIRTH_DATE: 0
+  - CATEGORY: 0
+  - SUPPLIER: 0
+  - STOCK_LEVEL: 0
+  - DISCOUNT_AVAILABLE: 0
+Total de registros duplicados: 0
+Valores duplicados por columna:
+  - ID: 0
+  - YEAR: 2131
+  - MONTH: 2124
+  - CUSTOMER: 1647
+  - PRODUCT: 2131
+  - UNITS_SOLD: 2036
+  - PRICE_PER_UNIT: 179
+  - REVENUE: 179
+  - MONTH_NUM: 2124
+  - CUSTOMER_NAME: 1782
+  - GENDER: 2134
+  - COUNTRY: 2132
+  - BIRTH_DATE: 1657
+  - CATEGORY: 2131
+  - SUPPLIER: 2131
+  - STOCK_LEVEL: 2131
+  - DISCOUNT_AVAILABLE: 2134
+
+--- Nombres de columnas dataset inicial ---
+['id', 'Year', 'Month', 'Customer', 'Product', 'Units_Sold', 'Price_per_Unit', 'Revenue', 'Customer_Name', 'Month_Num']
+
+--- Nombres de columnas dataset enriquecido ---
+['ID', 'YEAR', 'MONTH', 'CUSTOMER', 'PRODUCT', 'UNITS_SOLD', 'PRICE_PER_UNIT', 'REVENUE', 'MONTH_NUM', 'CUSTOMER_NAME', 'GENDER', 'COUNTRY', 'BIRTH_DATE', 'CATEGORY', 'SUPPLIER', 'STOCK_LEVEL', 'DISCOUNT_AVAILABLE']
+
+--- Operaciones Realizadas ---
+1. Eliminación de registros duplicados.
+2. Eliminación de filas con valores nulos.
+3. Enriquecimiento de datos con información adicional.
+4. Conversión de tipos de datos.
+5. Exportación de datos enriquecidos a CSV.
