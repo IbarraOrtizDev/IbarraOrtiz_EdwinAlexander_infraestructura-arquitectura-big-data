@@ -1,5 +1,9 @@
 import pandas as pd
 import glob
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 def loadProductInformation():
     # Load the product information
@@ -14,6 +18,9 @@ def loadCustomerInformation():
 # Load data cleaning
 def loadDataCleaning():
     files = glob.glob('src/static/xlsx/ingestion*.csv')
+    guid = os.getenv('UUID')
+    print(f"Files found: {files}")
+    print(f"Files Guid: {guid}")
     # Leer y concatenar todos los archivos encontrados
     df_list = [pd.read_csv(file) for file in files]
     
