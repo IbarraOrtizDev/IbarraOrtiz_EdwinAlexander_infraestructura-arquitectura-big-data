@@ -1,18 +1,18 @@
 Reporte de Enriquecimiento de Datos
 
 Registros en dataset base: 
-2142
+2190
 Registros después del enriquecimiento:
-2142
+2190
 Total de columnas en dataset base: 10
 Total de columnas en dataset enriquecido: 17
 
 --- Detalles de Integración ---
-Registros coincidentes en 'Customer': 2142
-Registros coincidentes en 'Product': 2142
+Registros coincidentes en 'Customer': 2190
+Registros coincidentes en 'Product': 2190
 
 --- Estadísticas de Datos ---
-Total de registros: 2142
+Total de registros: 2190
 Total de columnas: 17
 Total de valores nulos: 0
 Valores nulos por columna:
@@ -36,22 +36,22 @@ Valores nulos por columna:
 Total de registros duplicados: 0
 Valores duplicados por columna:
   - ID: 0
-  - YEAR: 2137
-  - MONTH: 2130
-  - CUSTOMER: 1652
-  - PRODUCT: 2137
-  - UNITS_SOLD: 2043
-  - PRICE_PER_UNIT: 166
-  - REVENUE: 164
-  - MONTH_NUM: 2130
-  - CUSTOMER_NAME: 1790
-  - GENDER: 2140
-  - COUNTRY: 2138
-  - BIRTH_DATE: 1661
-  - CATEGORY: 2137
-  - SUPPLIER: 2137
-  - STOCK_LEVEL: 2137
-  - DISCOUNT_AVAILABLE: 2140
+  - YEAR: 2185
+  - MONTH: 2178
+  - CUSTOMER: 1703
+  - PRODUCT: 2185
+  - UNITS_SOLD: 2090
+  - PRICE_PER_UNIT: 177
+  - REVENUE: 177
+  - MONTH_NUM: 2178
+  - CUSTOMER_NAME: 1837
+  - GENDER: 2188
+  - COUNTRY: 2186
+  - BIRTH_DATE: 1713
+  - CATEGORY: 2185
+  - SUPPLIER: 2185
+  - STOCK_LEVEL: 2185
+  - DISCOUNT_AVAILABLE: 2188
 
 --- Nombres de columnas dataset inicial ---
 ['id', 'Year', 'Month', 'Customer', 'Product', 'Units_Sold', 'Price_per_Unit', 'Revenue', 'Customer_Name', 'Month_Num']
